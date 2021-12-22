@@ -9,10 +9,23 @@ public class Move : MonoBehaviour
     void Start()
     {
         //transform.Translate(1,0,0);
+        PrintInstruccion();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        MovePlayer();
+    }
+
+    void PrintInstruccion()
+    {
+        Debug.Log("Welcome to the game");
+        Debug.Log("W,S,D,A for move");
+        Debug.Log("Don't hit the walls!");
+    }
+
+    void MovePlayer()
     {
         float xValue = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         float zValue = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
